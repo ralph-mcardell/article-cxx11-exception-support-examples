@@ -1,0 +1,6 @@
+*.vs
+*.o
+*.obj
+*.pdb
+*.idb
+*.ilk
