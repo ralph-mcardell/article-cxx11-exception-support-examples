@@ -16,7 +16,7 @@ SOURCE_DIR := src
 BIN_DIR := bin
 BUILD_DIR := build
 
-# The following four programs are single file affairs with
+# The following three programs are single file affairs with
 # no non-library includes
 EXCEPT_RAISING := cxx11_exception_raising_examples
 EXCEPT_RAISING_BIN := $(BIN_DIR)/$(EXCEPT_RAISING)
@@ -30,9 +30,23 @@ NESTED_EXCEPTION := cxx11_nested_exception_usage_example
 NESTED_EXCEPTION_BIN := $(BIN_DIR)/$(NESTED_EXCEPTION)
 NESTED_EXCEPTION_OBJ := $(BUILD_DIR)/$(NESTED_EXCEPTION).o
 
+# Custom error codes example has multiple parts
+CUSTOM_ERRC_BITS_SRC_DIR := custom_error_code_bits
+CUSTOM_ERRC_BITS_SRC_DIR_FULL := $(SOURCE_DIR)/$(CUSTOM_ERRC_BITS_SRC_DIR)
+CUSTOM_ERRC_MAKE_ERROR := the_game_error_codes
+CUSTOM_ERRC_MAKE_ERROR_SRC := $(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/$(CUSTOM_ERRC_MAKE_ERROR).cpp
+CUSTOM_ERRC_MAKE_ERROR_OBJ := $(BUILD_DIR)/$(CUSTOM_ERRC_MAKE_ERROR).o
+
 CUSTOM_ERRC := cxx11_custom_error_code_example
+CUSTOM_ERRC_SRC := $(SOURCE_DIR)/$(CUSTOM_ERRC).cpp
 CUSTOM_ERRC_BIN := $(BIN_DIR)/$(CUSTOM_ERRC)
 CUSTOM_ERRC_OBJ := $(BUILD_DIR)/$(CUSTOM_ERRC).o
+
+CUSTOM_ERRC_ALL_OBJ := $(CUSTOM_ERRC_OBJ) $(CUSTOM_ERRC_MAKE_ERROR_OBJ)
+
+CUSTOM_ERRC_HEADERS := $(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/appengine_error_codes.h \
+												$(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/renderer_error_codes.h \
+												$(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/the_game.h
 
 # The next three projects use a common C API and main but different
 # C++ API implementations:
@@ -81,9 +95,13 @@ $(NESTED_EXCEPTION_BIN): $(NESTED_EXCEPTION_OBJ)
 	$(MK_TARGET_DIR)
 	$(CXX) $(LDFLAGS) $^ -o $@
 
-$(CUSTOM_ERRC_BIN): $(CUSTOM_ERRC_OBJ)
+$(CUSTOM_ERRC_BIN): $(CUSTOM_ERRC_ALL_OBJ)
 	$(MK_TARGET_DIR)
 	$(CXX) $(LDFLAGS) $^ -o $@
+
+$(CUSTOM_ERRC_OBJ): $(CUSTOM_ERRC_SRC) $(CUSTOM_ERRC_HEADERS)
+
+$(CUSTOM_ERRC_MAKE_ERROR_OBJ) : $(CUSTOM_ERRC_MAKE_ERROR_SRC) $(CUSTOM_ERRC_HEADERS)
 
 COMMON_CATCH_API_HDR := $(SOURCE_DIR)/cxx11_common_catch_clause_eg_api.h
 
@@ -110,6 +128,10 @@ $(COMMON_CATCH_MAIN_OBJ): $(SOURCE_DIR)/$(COMMON_CATCH_MAIN).c $(COMMON_CATCH_AP
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.cpp
+	$(MK_TARGET_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(BUILD_DIR)/%.o: $(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/%.cpp
 	$(MK_TARGET_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
