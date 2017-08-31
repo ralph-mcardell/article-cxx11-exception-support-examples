@@ -6,3 +6,5 @@
 *.ilk
 bin
 build
+Debug
+Release
