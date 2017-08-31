@@ -24,6 +24,9 @@
     <ClCompile Include="..\..\src\custom_error_code_bits\the_game_error_codes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\custom_error_code_bits\the_game_api.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\custom_error_code_bits\appengine_error_codes.h">

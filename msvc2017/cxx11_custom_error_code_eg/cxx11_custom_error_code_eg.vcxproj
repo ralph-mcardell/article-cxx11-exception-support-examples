@@ -145,6 +145,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\custom_error_code_bits\the_game_api.cpp" />
     <ClCompile Include="..\..\src\custom_error_code_bits\the_game_error_codes.cpp" />
     <ClCompile Include="..\..\src\cxx11_custom_error_code_example.cpp" />
   </ItemGroup>

@@ -26,7 +26,7 @@ namespace
     case renderer_error::game_dimension_too_small:
       return "Reported min. supported game grid less than 3 x 3";
     case renderer_error::game_dimension_bad_range:
-      return "Reported a max. supported game grid less than the min.";
+      return "Reported max. supported game grid less than the min.";
     case renderer_error::board_too_small:
       return "Reported a min. supported pixel length less than 1";
     case renderer_error::board_bad_range:
