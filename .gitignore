@@ -4,3 +4,5 @@
 *.pdb
 *.idb
 *.ilk
+bin
+build
