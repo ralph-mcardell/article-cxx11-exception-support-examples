@@ -2,6 +2,9 @@
 
 #ifndef CXX11_EXCEPTION_SUPPORT_CUSTOM_ERROR_CODE_BITS_RENDERER_ERROR_CODES_H
 # define CXX11_EXCEPTION_SUPPORT_CUSTOM_ERROR_CODE_BITS_RENDERER_ERROR_CODES_H
+
+# include <system_error>
+
 namespace the_game
 {
   enum class renderer_error
@@ -17,5 +20,12 @@ namespace the_game
   , new_state_invalid
   , prev_state_invalid
   };
+  std::error_code make_error_code(renderer_error);
+}
+
+namespace std
+{
+  using the_game::renderer_error;
+  template <> struct is_error_code_enum<renderer_error> : true_type {};
 }
 #endif // CXX11_EXCEPTION_SUPPORT_CUSTOM_ERROR_CODE_BITS_RENDERER_ERROR_CODES_H

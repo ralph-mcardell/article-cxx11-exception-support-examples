@@ -1,7 +1,9 @@
 //
 #ifndef CXX11_EXCEPTION_SUPPORT_CUSTOM_ERROR_CODE_BITS_APPENGINE_ERROR_CODES_H
 # define CXX11_EXCEPTION_SUPPORT_CUSTOM_ERROR_CODE_BITS_APPENGINE_ERROR_CODES_H
-// In game/appengine_panic.hpp
+
+# include <system_error>
+
 namespace the_game
 {
   enum class appengine_error
@@ -12,5 +14,13 @@ namespace the_game
   , bad_game_object
   , null_player          = 400
   };
+  std::error_code make_error_code(appengine_error);
 }
+
+namespace std
+{
+  using the_game::appengine_error;
+  template <> struct is_error_code_enum<appengine_error> : true_type {};
+}
+
 #endif // CXX11_EXCEPTION_SUPPORT_CUSTOM_ERROR_CODE_BITS_APPENGINE_ERROR_CODES_H
