@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\cxx11_std_exception_ptr_etc_example.cpp">
+    <ClCompile Include="..\..\src\cxx11_std_exception_ptr_etc_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

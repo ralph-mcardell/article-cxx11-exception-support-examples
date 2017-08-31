@@ -18,15 +18,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cxx11_common_catch_clause_eg_api.h">
+    <ClInclude Include="..\..\src\cxx11_common_catch_clause_eg_api.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\cxx11_common_catch_clause_eg_main.c">
+    <ClCompile Include="..\..\src\cxx11_common_catch_clause_eg_main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cxx11_common_catch_clause_exec_around_example.cpp">
+    <ClCompile Include="..\..\src\cxx11_common_catch_clause_exec_around_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

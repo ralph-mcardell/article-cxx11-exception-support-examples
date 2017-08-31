@@ -139,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\cxx11_common_catch_clause_eg_main.c" />
-    <ClCompile Include="..\..\cxx11_common_catch_clause_motivating_example.cpp" />
+    <ClInclude Include="..\..\src\cxx11_common_catch_clause_eg_api.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cxx11_common_catch_clause_eg_api.h" />
+    <ClCompile Include="..\..\src\cxx11_common_catch_clause_eg_main.c" />
+    <ClCompile Include="..\..\src\cxx11_common_catch_clause_motivating_example.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

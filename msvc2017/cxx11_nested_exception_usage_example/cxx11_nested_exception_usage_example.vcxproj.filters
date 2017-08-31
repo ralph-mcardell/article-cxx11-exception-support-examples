@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\cxx11_nested_exception_usage_example.cpp">
+    <ClCompile Include="..\..\src\cxx11_nested_exception_usage_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
