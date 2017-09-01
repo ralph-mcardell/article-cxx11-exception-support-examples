@@ -9,10 +9,6 @@ namespace the_game
 {
   std::error_code check_dimensions( int dim_min, int dim_max )
   {
-    if ( dim_min < 0 || dim_max < 0 )
-    {
-      return renderer_error::game_dimension_bad;
-    }
     if ( dim_min < 3 )
     {
       return renderer_error::game_dimension_too_small;
@@ -36,7 +32,7 @@ namespace the_game
 
   std::error_code appengine::update_game_board()
   {
-    return rp_ ? std::error_code{} : appengine_error::no_renderer_container;
+    return rp_ ? std::error_code{} : appengine_error::no_renderer;
   }
 
   int oops_renderer::min_dimension() const

@@ -7,8 +7,8 @@
 namespace the_game
 {
   enum class appengine_error
-  { no_object_con_ix     = 100
-  , no_renderer_container
+  { no_object_index     = 100
+  , no_renderer
   , null_draw_action     = 200
   , bad_draw_context     = 300
   , bad_game_object

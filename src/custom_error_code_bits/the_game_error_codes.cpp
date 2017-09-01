@@ -68,10 +68,10 @@ namespace
     using the_game::appengine_error;
     switch( static_cast<appengine_error>(ev) )
     {
-    case appengine_error::no_object_con_ix:
-      return "No object container index to create object container from";
-    case appengine_error::no_renderer_container:
-      return "No renderer container to access renderers through";
+    case appengine_error::no_object_index:
+      return "No object index";
+    case appengine_error::no_renderer:
+      return "No renderer currently set";
     case appengine_error::null_draw_action:
       return "Null draw action pointer";
     case appengine_error::bad_draw_context:
