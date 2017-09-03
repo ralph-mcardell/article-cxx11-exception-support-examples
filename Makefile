@@ -52,7 +52,7 @@ CUSTOM_ERRC_ALL_OBJ :=  $(CUSTOM_ERRC_OBJ) \
 
 CUSTOM_ERRC_HEADERS :=  $(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/appengine_error_codes.h \
 												$(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/renderer_error_codes.h \
-												$(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/the_game.h
+												$(CUSTOM_ERRC_BITS_SRC_DIR_FULL)/the_game_api.h
 
 # The next three projects use a common C API and main but different
 # C++ API implementations:

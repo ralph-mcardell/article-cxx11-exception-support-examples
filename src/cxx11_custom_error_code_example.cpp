@@ -1,6 +1,6 @@
 // Plugging custom error codes into std::error_code etc. machinery example
 
-#include "custom_error_code_bits/the_game.h"
+#include "custom_error_code_bits/the_game_api.h"
 #include <system_error>
 #include <iostream>
 #include <string>
