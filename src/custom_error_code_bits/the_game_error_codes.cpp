@@ -1,7 +1,7 @@
 // Custom error code: error category and make_error_code definitions
 
-#include "renderer_error_codes.h"
-#include "appengine_error_codes.h"
+#include "renderer_error.h"
+#include "appengine_error.h"
 #include <system_error>
 #include <string>
 

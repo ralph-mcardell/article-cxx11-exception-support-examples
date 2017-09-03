@@ -1,13 +1,13 @@
 // Custom error code example : spoof game api functions
 #include "the_game_api.h"
-#include "renderer_error_codes.h"
-#include "appengine_error_codes.h"
+#include "renderer_error.h"
+#include "appengine_error.h"
 #include <system_error>
 #include <memory>
 
 namespace the_game
 {
-  std::error_code check_dimensions( int dim_min, int dim_max )
+  std::error_code check_dimensions( int dim_min, int dim_max ) noexcept
   {
     if ( dim_min < 3 )
     {
@@ -21,6 +21,7 @@ namespace the_game
   }
 
   std::error_code appengine::take_renderer( std::unique_ptr<renderer> && rp )
+    noexcept
   {
     auto ec{ check_dimensions(rp->min_dimension(), rp->max_dimension()) };
     if ( !ec )
@@ -30,7 +31,7 @@ namespace the_game
     return ec;
   }
 
-  std::error_code appengine::update_game_board()
+  std::error_code appengine::update_game_board() noexcept
   { // good case demonstrates zero-initialising enum class instance 
     return rp_ ? appengine_error{} : appengine_error::no_renderer;
   }

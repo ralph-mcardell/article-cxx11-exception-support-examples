@@ -31,8 +31,8 @@ namespace the_game
     std::unique_ptr<renderer> rp_;
 
   public:
-    std::error_code take_renderer( std::unique_ptr<renderer> && rp );
-    std::error_code update_game_board();
+    std::error_code take_renderer( std::unique_ptr<renderer> && rp ) noexcept;
+    std::error_code update_game_board() noexcept;
   };
 
   appengine & get_appengine();
