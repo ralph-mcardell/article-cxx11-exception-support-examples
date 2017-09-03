@@ -7,7 +7,7 @@
 
 std::exception_ptr g_stashed_exception_ptr;
 
-auto bad_task() -> void
+void bad_task()
 {
   try
   {
@@ -19,7 +19,7 @@ auto bad_task() -> void
   }
 }
 
-auto main() -> int
+int main()
 {
   assert( g_stashed_exception_ptr == nullptr );
   assert( !g_stashed_exception_ptr );
