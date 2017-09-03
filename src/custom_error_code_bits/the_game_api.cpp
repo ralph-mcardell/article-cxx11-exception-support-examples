@@ -31,8 +31,8 @@ namespace the_game
   }
 
   std::error_code appengine::update_game_board()
-  {
-    return rp_ ? std::error_code{} : appengine_error::no_renderer;
+  { // good case demonstrates zero-initialising enum class instance 
+    return rp_ ? appengine_error{} : appengine_error::no_renderer;
   }
 
   int oops_renderer::min_dimension() const
