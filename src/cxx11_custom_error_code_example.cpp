@@ -1,6 +1,7 @@
 // Plugging custom error codes into std::error_code etc. machinery example
 
 #include "custom_error_code_bits/the_game.h"
+#include <system_error>
 #include <iostream>
 #include <string>
 
@@ -25,7 +26,7 @@ int main()
 
   // OK - nothing to report, this renderer is fine and dandy
   rend.reset( new the_game::fine_renderer );
-  log_bad_status_codes( engine.take_renderer(std::move(rend)) );
+  log_bad_status_codes( engine.take_renderer( std::move(rend)) );
 
   // OK - now have renderer to render board updates
   log_bad_status_codes( engine.update_game_board() );
