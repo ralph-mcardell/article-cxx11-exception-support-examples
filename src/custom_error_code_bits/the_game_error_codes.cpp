@@ -50,8 +50,6 @@ namespace
     }
   }
 
-  const renderer_error_category therenderer_error_categoryObj {};
-
   struct appengine_error_category : std::error_category
   {
     const char* name() const noexcept override;
@@ -84,19 +82,19 @@ namespace
       return "?? unrecognised error ??";
     }
   }
-
-  const appengine_error_category theappengine_error_categoryObj {};
 }
 
 namespace the_game
 {
   std::error_code make_error_code(renderer_error e)
   {
+    static const renderer_error_category therenderer_error_categoryObj {};
     return {static_cast<int>(e), therenderer_error_categoryObj};
   }
 
   std::error_code make_error_code(appengine_error e)
   {
+    static const appengine_error_category theappengine_error_categoryObj {};
     return {static_cast<int>(e), theappengine_error_categoryObj};
   }
 }
