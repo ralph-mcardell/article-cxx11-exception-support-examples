@@ -5,6 +5,7 @@
 
 # include <memory>
 # include <system_error>
+# include <new> // for std::nothrow
 
 namespace the_game
 {
@@ -32,7 +33,8 @@ namespace the_game
 
   public:
     std::error_code take_renderer( std::unique_ptr<renderer> && rp ) noexcept;
-    std::error_code update_game_board() noexcept;
+    std::error_code update_game_board(std::nothrow_t) noexcept;
+    void update_game_board();
   };
 
   appengine & get_appengine();

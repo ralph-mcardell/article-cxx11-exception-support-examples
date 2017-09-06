@@ -31,9 +31,18 @@ namespace the_game
     return ec;
   }
 
-  std::error_code appengine::update_game_board() noexcept
+  std::error_code appengine::update_game_board(std::nothrow_t) noexcept
   { // good case demonstrates zero-initialising enum class instance 
     return rp_ ? appengine_error{} : appengine_error::no_renderer;
+  }
+
+  void appengine::update_game_board()
+  {
+    if ( !rp_ )
+    { // Demonstrates constructing a std::system_error exception object
+      // directly from a custom error value
+      throw std::system_error(appengine_error::no_renderer);
+    }
   }
 
   int oops_renderer::min_dimension() const
