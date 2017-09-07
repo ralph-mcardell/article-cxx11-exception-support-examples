@@ -14,7 +14,7 @@ namespace the_game
   , bad_game_object
   , null_player          = 400
   };
-  std::error_code make_error_code(appengine_error);
+  std::error_code make_error_code(appengine_error e);
 }
 
 namespace std

@@ -20,7 +20,7 @@ namespace the_game
   , new_state_invalid
   , prev_state_invalid
   };
-  std::error_code make_error_code(renderer_error);
+  std::error_code make_error_code(renderer_error e);
 }
 
 namespace std
