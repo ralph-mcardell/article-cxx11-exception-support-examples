@@ -21,24 +21,24 @@
     <ClCompile Include="..\..\src\cxx11_custom_error_code_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\custom_error_code_bits\the_game_api.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\custom_error_code_bits\appengine_error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\custom_error_code_bits\renderer_error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\custom_error_code_bits\the_game_api.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\custom_error_code_bits\the_game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\custom_error_code_bits\appengine_error.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\custom_error_code_bits\renderer_error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\custom_error_code_bits\the_game_api.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
